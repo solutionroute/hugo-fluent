@@ -35,11 +35,16 @@ docs](https://gohugo.io/getting-started/configuration/) to specify this theme.
 ## exampleSite
 
 An included `exampleSite` demonstrates the capabilities of the theme. Check out
-[config.yaml](../exampleSite/config.yaml) for theme configuration parameters.
+[config.yaml](exampleSite/config.yaml) for theme configuration parameters.
 
-An `exampleSite` shell script makes it easy to start the example site:
+A shell script makes it easy to start the example site:
 
     ./dev.sh
+
+To see the effect of production CSS purging and minimization, start the script
+or Hugo:
+
+    HUGO_ENVIRONMENT=production ./dev.sh
 
 ## Customization Requirements
 
