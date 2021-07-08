@@ -1,0 +1,31 @@
+{
+  "name": "hugo-fluent",
+  "version": "0.1.0",
+  "description": "For Hugo, a responsive theme styled with tailwindcss.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solutionroute/hugo-fluent.git"
+  },
+  "keywords": [
+    "hugo",
+    "theme",
+    "responsive",
+    "tailwindcss",
+    "tailwind"
+  ],
+  "author": "Mike Watkins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solutionroute/hugo-fluent/issues"
+  },
+  "homepage": "https://github.com/solutionroute/hugo-fluent#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
+  }
+}

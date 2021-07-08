@@ -1,0 +1,17 @@
+# hugo-fluent
+
+name = "hugo-fluent"
+license = "MIT"
+licenselink = "https://github.com/solutionroute/hugo-fluent/blob/main/LICENSE"
+description = "For Hugo, a responsive theme styled with tailwindcss."
+homepage = "https://github.com/solutionroute/hugo-fluent"
+# XXX If you have a running demo of the theme.
+demosite = "https://gohugo.io"
+tags = ["blog", "personal"]
+features = ["tailwindcss","responsive", "lighthouse"]
+min_version = "0.69.0"
+
+[author]
+  name = "Mike Watkins"
+  homepage = "https://github.com/solutionroute/"
+
