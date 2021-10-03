@@ -1,8 +1,9 @@
 # hugo-fluent
-For Hugo, a responsive theme styled with [tailwindcss][1].  XXX ADD DEMO LINK.
+For Hugo, a mobile-first responsive theme styled with [tailwindcss][1]. 
 
-**July 8, 2021: `hugo-fluent` is a new project and is work in progress. Check
-back for a working release in the next day or so.**
+## Demo
+
+ XXX ADD DEMO LINK.
 
 ## Overview
 
@@ -41,6 +42,11 @@ A shell script makes it easy to start the example site:
 
     ./dev.sh
 
+Or, use the npm tooling (see `package.json` for other commands), e.g.:
+
+    npm run dev
+    npm run build
+
 To see the effect of production CSS purging and minimization, start the script
 or Hugo:
 
@@ -57,5 +63,9 @@ you'll need to install [tailwindcss][1] and related tooling to regenerate and
 minimize the CSS based on your customizations. Run:
 
     npm install
+
+## Changes
+
+2021-10-03 Move to Tailwind 3.0.0-alpha.1 and change tooling to use Tailwind JIT (available since tw 2+)
 
 [1]: <https://tailwindcss.com/>
