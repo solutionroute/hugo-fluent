@@ -1,3 +1,3 @@
 #!/bin/sh
-IP=`hostname -I | awk '{print $1}'`
-hugo server -t hugo-fluent --bind $IP --baseURL=http://$IP:1313/
+HOSTNAME=`hostname`
+hugo server -t hugo-fluent --bind $HOSTNAME --baseURL=http://$HOSTNAME:1313/
