@@ -1,0 +1,23 @@
+<aside id="meta" class="text-base text-neutral-600 mb-4">
+    <div class="sm:grid sm:grid-cols-2 ">
+        <span>
+            {{ if $.Site.Params.displayDate }}
+            {{ .Date.Format "Monday, January 2, 2006" }}
+            {{ end }}
+        </span>
+        <span class="hidden sm:block sm:visible sm:text-right">
+            <!-- TODO: Reading time will look odd against tags. Defaulting it to off for now -->
+            {{ if $.Site.Params.displayReadingTime }}
+            {{ .WordCount }} Words,
+            {{ printf "%d minutes" .ReadingTime }}
+            {{ end }}
+            {{ if $.Site.Params.displayTags }}
+            {{ with .Params.tags }}
+            {{ range . }}
+            &nbsp;<a class="text-primary-700" href="{{ " tags/" | absURL }}{{ . | urlize }}">#{{ . }}</a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </span>
+    </div>
+</aside>
