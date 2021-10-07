@@ -1,6 +1,45 @@
 # exampleSite for hugo-fluent 
 baseURL: http://example.org/
-languageCode: en-us
-title: My New Hugo Site
-theme: hugo-fluent
 themesDir: ../..
+theme: hugo-fluent
+# required for tailwindcss / postCSS class extraction XXX TODO - perhaps not needed for new JIT config
+build:
+    writeStats: true
+title: My New Hugo Site
+# languageCode, author and copyright are also used by hugo's built-in rss template
+# See: https://gohugo.io/templates/rss/#configure-rss
+languageCode: en-us
+author: 
+    name: Mega Example Company
+copyright: 2020 # Set this to the first year site started publishing
+#
+# hugo options
+
+# hugo-fluent specific options; most theme customization happens here
+params:
+    siteTitle: hugo-fluent # typically one or two words
+    siteCopyrightOwner: '@solutionroute'  # org/owner/author of this site
+    siteCopyrightLink: https://github.com/solutionroute/  # org/owner/author of this site
+
+    # Google Fonts; if using other providers, override the font-default.html partial in your site.
+    # Note: The Tailwind config needs to be updated and CSS regenerated.
+    # Look 1:
+    fontSans: "Lato"     # Montserrat as an alternative look
+    fontSerif: "Neuton"
+
+    # Look 2:
+    fontSans: "Source Sans Pro"     # Montserrat as an alternative look
+    fontSerif: "Source Serif Pro"
+
+    # meta data display, see partial meta.html
+    displayAuthor: false        # display Author component (partial) in single pages and lists
+    displayDate: true           # document creation date
+    displayUpdated: false       # document updated date
+    displayReadingTime: false   # words and time
+    displayTags: true           # related tags
+    # social media links; see partials/footer.html 
+    # facebookLink:
+    githubLink: https://github.com/solutionroute/
+    # instagramLink:
+    # linkedinLink:
+    twitterLink: https://twitter.com/mikewatkinsyvr

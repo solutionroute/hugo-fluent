@@ -1,0 +1,11 @@
+<!-- in config.yaml|toml|etc set copyright to just a year, the start year of copyright -->
+ {{ $c := .Site.Copyright }}
+ © {{ $c }}
+ {{ if ne $c (string now.Year)}} - {{ now.Year }}{{ end }}
+        <a href="{{ with $.Site.Params.siteCopyrightLink }}{{.}}{{else}}{{"#"}}{{end}}">
+            {{ with $.Site.Params.siteCopyrightOwner }}
+            {{ . }}
+            {{ else }}
+            CONFIG VALUE MISSING - set Params: siteCopyrightOwner
+            {{ end }}
+            </a>
