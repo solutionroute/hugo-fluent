@@ -1,37 +1,41 @@
 {{ define "main" }}
 		<header>
-			<h1>Recent Articles</h1>
+			<!-- TODO: 
+				Make date display in list view a config option?	
+				Pick up Section (i.e. Posts) or Tag as header here:
+			-->
+			<h1 class="text-3xl font-medium">Recent Articles</h1>
 		</header>
 		{{ range .Pages }}
 			<!-- Tile -->
-			<article class="list-article font-sans border rounded mt-4">
-						<a class="block" href="{{ .Permalink }}">
+			<article class="list-article font-sans my-3">
 				<header class="list-article-header font-sans">
-					<p class="">
+					<p class="text-base text-neutral-600">
 						{{ .Date.Format "January 2, 2006" }} 
 					</p> 
 					<h2 class="text-xl font-semibold leading-none">
 						<a href="{{ .Permalink }}">{{ .Title }}</a>
 					</h2>
 				</header>
-				<p class="list-article-summary leading-tight"> 
+				<p class="list-article-summary leading-tight text-lg"> 
 					{{ with .Description }}
 						{{ . }}
 					{{ else }}
 						{{ .Summary }} 
 					{{ end }}
 				</p>
-				<footer class="list-article-footer pb-2 text-xl">
+				<footer class="list-article-footer">
 					<!-- TODO make optional in config tags in list view -->
 					{{ with .Params.tags }}
 						{{ range . }}
-							<a class="inline-flex text-xs p-2 tracking-widest rounded px-4 mt-2 mr-2 bg-secondary-50 text-secondary-900 uppercase" 
-
+							<a class="inline-flex text-xs font-medium uppercase p-1 tracking-widest 
+							rounded-full py-1 px-2
+							mr-1 
+							bg-secondary-100 text-secondary-800 border border-secondary-300" 
 							   href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
 						{{ end }}
 					{{ end }}
 				</footer>
-						</a>
 			</article>
 		{{ end }}
 {{ end }}
