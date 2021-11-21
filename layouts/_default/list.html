@@ -1,0 +1,37 @@
+{{ define "main" }}
+		<header>
+			<h1>Recent Articles</h1>
+		</header>
+		{{ range .Pages }}
+			<!-- Tile -->
+			<article class="list-article font-sans border rounded mt-4">
+						<a class="block" href="{{ .Permalink }}">
+				<header class="list-article-header font-sans">
+					<p class="">
+						{{ .Date.Format "January 2, 2006" }} 
+					</p> 
+					<h2 class="text-xl font-semibold leading-none">
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+					</h2>
+				</header>
+				<p class="list-article-summary leading-tight"> 
+					{{ with .Description }}
+						{{ . }}
+					{{ else }}
+						{{ .Summary }} 
+					{{ end }}
+				</p>
+				<footer class="list-article-footer pb-2 text-xl">
+					<!-- TODO make optional in config tags in list view -->
+					{{ with .Params.tags }}
+						{{ range . }}
+							<a class="inline-flex text-xs p-2 tracking-widest rounded px-4 mt-2 mr-2 bg-secondary-50 text-secondary-900 uppercase" 
+
+							   href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+						{{ end }}
+					{{ end }}
+				</footer>
+						</a>
+			</article>
+		{{ end }}
+{{ end }}

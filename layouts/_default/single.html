@@ -1,0 +1,20 @@
+{{ define "main" }}
+<!-- max-w-none overrides the internal prose class width -->
+<article id="single" class="prose max-w-none md:max-w-prose">
+  <!-- section first -->
+  {{ with .Section }}
+  <p class="-ml-2 text-lg"><strong class="text-neutral-600">&lsaquo;</strong>
+    <a class="text-primary-700" href="../">{{ . | pluralize | title }}</a>
+  </p>
+  {{ end }}
+  <!-- Doc date and tags -->
+  {{- partial "meta.html" . -}}
+  <h1 id="title" class="mt-1 tracking-tight leading-none">{{ .Title }}</h1>
+  {{- if .Description }}
+  <h2 id="subtitle" class="font-medium tracking-tight leading-none"> {{ .Description }} </h2>
+  {{ end }}
+  <div id="content" class="font-serif xprose prose-lg prose-yellow leading-normal md:prose-xl md:leading-relaxed">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

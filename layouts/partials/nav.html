@@ -1,0 +1,66 @@
+<!-- 
+(C) Mike Watkins see LICENSE.
+Responsive Tailwindcss styled nav menu.
+Requires the lightweight Alpine.js 3.x library, see head.html partial 
+-->
+<!-- allows esc to exit menu -->
+<nav x-data="{ isMobileNavOpen: false }" x-on:keydown.escape.window="isMobileNavOpen = !isMobileNavOpen"
+    class="md:flex md:justify-between md:items-center">
+    <div class="flex justify-between items-center">
+        <div class="flex items-center">
+            <!-- logo + logotype -->
+            <a class="flex items-center md:justify-start justify-center" href="{{ .Site.Home.Permalink }}">
+                <!-- svg logo -->
+                <span class="w-8 h-8 text-neutral-50 p-1 bg-primary-700 rounded-full">
+                    {{ partial "logo.html" . }}
+                </span>
+                <!-- logo text -->
+                <span id="logoTitle" class="ml-1 text-lg text-primary-700">
+                    {{ with $.Site.Params.siteTitle }}
+                    {{ . }}
+                    {{ else }}
+                    CONFIG VALUE MISSING - set Params: siteTitle
+                    {{ end }}
+                </span>
+            </a>
+        </div>
+        <!-- Mobile menu controls  -->
+        <div class="flex md:hidden">
+            <button type="button" class="text-neutral-500 hover:text-primary-700  focus:text-primary-700"
+                aria-label="Toggle Main Menu" @click="isMobileNavOpen = !isMobileNavOpen">
+                <!-- hamburger -->
+                <svg :class="!isMobileNavOpen ? 'show' : 'hidden'" class="block h-w6 w-6"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    aria-hidden="true">
+                    <title>Open Navigation Menu</title>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- closing X -->
+                <svg :class="isMobileNavOpen ? 'show' : 'hidden'" class="block h-w6 w-6 text-primary-700"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    aria-hidden="true">
+                    <title>Close Navigation Menu (or esc)</title>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- Menu, if mobile set to hidden -->
+    <div :class="isMobileNavOpen ? 'show' : 'hidden'"
+        class="flex text-center justify-center text-neutral-600 shadow-md -mx-2 md:mx-0 md:shadow-none md:items-center md:block md:mt-0">
+        <div
+            class="flex flex-col md:flex-row md:ml-6 text-neutral-600 font-bold md:font-normal text-2xl md:text-lg">
+            {{ range .Site.Sections }}
+            <a href="{{ .Permalink }}" class="hover:text-primary-700 my-2 md:mx-4 md:my-0">{{ .Title }}</a>
+            {{ end }}
+            {{ with .Site.GetPage "/about" }}
+            <a href="{{ .Permalink }}" class="hover:text-primary-700 my-2 md:mx-4 md:my-0">About</a>
+            {{ end }}
+            <!-- minor padding adjustments for last menu item -->
+            {{ with .Site.GetPage "/contact" }}
+            <a href="{{ .Permalink }}" class="hover:text-primary-700 my-2 md:ml-4 md:my-0">Contact</a>
+            {{ end }}
+        </div>
+    </div>
+</nav>

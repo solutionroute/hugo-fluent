@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<!-- TODO internationalization -->
+<html lang="en">
+{{- partial "head.html" . -}}
+<!-- TODO add dark mode classes throughout theme, document in README when done. -->
+
+<body class="bg-neutral-200">
+    <div class="bg-neutral-50">
+        <!-- Only in development mode: shows breakpoints as browser / viewport width is scaled -->
+        {{ partial "breakpoint-tool.html" -}}
+        <!-- full width header and footer -->
+        <header class="border-t-2 md:border-t-4 mb-10 border-primary-700">
+            <div class="max-w-3xl mx-auto px-2 py-3 md:px-4">
+                {{- partial "nav.html" . -}}
+            </div>
+        </header>
+        <main class="max-w-3xl mx-auto px-2 md:px-4 bg-transparent">
+            {{- block "main" . }}{{- end }}
+        </main>
+        <footer class="mt-10 bg-neutral-200 border-t-2 border-neutral-300 ">
+            <div class="max-w-3xl mx-auto py-3 px-2 md:px-4">
+                {{- partial "footer.html" . -}}
+            </div>
+        </footer>
+    </div>
+</body>
+
 </html>
