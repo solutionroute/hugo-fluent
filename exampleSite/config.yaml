@@ -38,8 +38,8 @@ params:
     displayReadingTime: false   # words and time
     displayTags: true           # related tags
     # social media links; see partials/footer.html 
-    # facebookLink:
+    facebookLink: "#"
     githubLink: https://github.com/solutionroute/
-    # instagramLink:
-    # linkedinLink:
+    instagramLink: "#"
+    linkedinLink: "#"
     twitterLink: https://twitter.com/mikewatkinsyvr
