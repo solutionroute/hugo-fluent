@@ -3,12 +3,14 @@ public/
 resources/
 hugo_stats.json
 
-# Dependency directories
+# Node
 node_modules/
 
 # dotenv environment variables file
 .env
 .env.test
 
-# misc
+# notes
 .scratchpad.md
+# for misc stashing
+temp/
