@@ -4,12 +4,12 @@
 {{- partial "head.html" . -}}
 <!-- TODO add dark mode classes throughout theme, document in README when done. -->
 
-<body class="bg-neutral-200">
-    <div class="bg-neutral-50">
+<body class="bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-200">
+    <div class="bg-neutral-50 dark:bg-neutral-600">
         <!-- Only in development mode: shows breakpoints as browser / viewport width is scaled -->
         {{ partial "breakpoint-tool.html" -}}
         <!-- full width header and footer -->
-        <header class="border-t-2 md:border-t-4 mb-10 border-primary-700">
+        <header class="border-t-2 md:border-t-4 mb-10 bg-neutral-50 dark:bg-neutral-600 border-primary-700 dark:border-primary-500">
             <div class="max-w-3xl mx-auto px-2 py-3 md:px-4">
                 {{- partial "nav.html" . -}}
             </div>
@@ -17,7 +17,7 @@
         <main class="max-w-3xl mx-auto px-2 md:px-4 bg-transparent">
             {{- block "main" . }}{{- end }}
         </main>
-        <footer class="mt-10 bg-neutral-200 border-t-2 border-neutral-300 ">
+        <footer class="mt-10 bg-neutral-200 dark:bg-neutral-700 border-t-2 border-neutral-300 dark:border-neutral-800">
             <div class="max-w-3xl mx-auto py-3 px-2 md:px-4">
                 {{- partial "footer.html" . -}}
             </div>

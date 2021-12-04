@@ -5,8 +5,7 @@ const PRODUCTION = (process.env.HUGO_ENVIRONMENT === 'production' || process.env
 
 module.exports = {
     // tailwind 3 alpha - darkMode deprecated XXX sort out
-  // darkMode: false, // enable with 'media' or 'class' https://tailwindcss.com/docs/dark-mode
-  important: true, // See https://tailwindcss.com/docs/configuration#important
+  darkMode: 'media', // enable with 'media' for OS support, or 'class' to build your own toggle https://tailwindcss.com/docs/dark-mode
   theme: {
 	  // Define your font imports override in your site's layout/partials/font-imports.html
 	  // and then update the following keys as needed:
@@ -23,18 +22,22 @@ module.exports = {
         // 'smallcaps': ['dolly-small-caps-new', ...defaultTheme.fontFamily.serif],
       },
       colors: {
+        // TODO
+        // Add theme colors for major items such as
+        // prose-link and prose-link-dark
+        // so that dark: mode items can refer to these and be changed in here OR in a theme file
+        
         // First, re-mapping primary Tailwind colors to our theme palette.
         // See: https://tailwindcss.com/docs/customizing-colors#default-color-palette
-        gray: colors.red,
+        gray: colors.neutral,
         green: colors.lime,
         blue: colors.sky,
-        yellow: colors.orange,
 
         // Role names for colors are used throughout hugo-fluent
         // main theme color shade is -600
         primary: colors.orange,
         // -700
-        secondary: colors.green,
+        secondary: colors.lime,
         // -600 for buttons, other secondary elements
 
         // REVERSE TEXT
@@ -43,7 +46,7 @@ module.exports = {
         // -900: dark
 
         // badges / category buttons or category text
-        badge: colors.blue,
+        badge: colors.sky, // blue
         // -600: all
 
         neutral: colors.stone

@@ -3,8 +3,8 @@
 <article id="single" class="prose max-w-none md:max-w-prose">
   <!-- section first -->
   {{ with .Section }}
-  <p class="-ml-2 text-lg"><strong class="text-neutral-600">&lsaquo;</strong>
-    <a class="text-primary-700" href="../">{{ . | pluralize | title }}</a>
+  <p class="-ml-2 text-lg text-blue-300"><strong class="xtext-neutral-600">&lsaquo;</strong>
+    <a class="xtext-primary-700" href="../">{{ . | pluralize | title }}</a>
   </p>
   {{ end }}
   <!-- Doc date and tags -->
@@ -13,7 +13,7 @@
   {{- if .Description }}
   <h2 id="subtitle" class="font-medium tracking-tight leading-none"> {{ .Description }} </h2>
   {{ end }}
-  <div id="content" class="font-serif xprose prose-lg prose-yellow leading-normal md:prose-xl md:leading-relaxed">
+  <div id="content" class="font-serif prose prose-lg prose-orange leading-normal md:prose-xl md:leading-relaxed">
     {{ .Content }}
   </div>
 </article>
